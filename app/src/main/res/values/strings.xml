@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Alarma</string>
+    <string name="NuevaAlarma">Añadir alarma</string>
+    <string name="tvAlarma">Alarma</string>
+    <string name="twitter">Twitter</string>
+    <string name="weather">El Tiempo</string>
+    <string name="ubuMail">UBU Mail</string>
+    <string name="ubuCalendar">Ubu Calendario</string>
+    <string name="accept">Aceptar</string>
+    <string name="DateTime">Hora y Dias</string>
+    <string name="CustomMessage">Mensaje personalizado</string>
+    <string name="Time">Hora</string>
+    <string name="Days">Dias</string>
+    <string name="Monday">Lunes</string>
+    <string name="Tuesday">Martes</string>
+    <string name="Wednesday">Miercoles</string>
+    <string name="Thursday">Jueves</string>
+    <string name="Friday">Viernes</string>
+    <string name="Saturday">Sábado</string>
+    <string name="Sunday">Domingo</string>
+    <string name="Access">Accesos</string>
+    <string name="UBU">UBU</string>
+    <string name="twitterAccess">Acceso a twitter</string>
+    <string name="User">Usuario</string>
+    <string name="Password">Contraseña</string>
+    <string name="twitterAccessHint">Télefono, correo o usuario</string>
+
 </resources>

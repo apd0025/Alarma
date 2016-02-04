@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.addAlarm"/>
+      <point      
+        x = "3092"      
+        y = "844"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.addTwitterUser"/>
+      <point      
+        x = "412"      
+        y = "1072"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.Access"/>
+      <point      
+        x = "1876"      
+        y = "996"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.MainActivity"/>
+      <point      
+        x = "2540"      
+        y = "32"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.Days"/>
+      <point      
+        x = "1724"      
+        y = "128"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.TimeDate"/>
+      <point      
+        x = "64"      
+        y = "40"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>

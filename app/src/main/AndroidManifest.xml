@@ -15,6 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".addAlarm" />
+        <activity android:name=".Access" />
+        <activity android:name=".addTwitterUser" />
+        <activity android:name=".Days" />
+        <activity android:name=".TimeDate"></activity>
     </application>
 
 </manifest>
