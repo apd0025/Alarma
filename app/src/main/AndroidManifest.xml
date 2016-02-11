@@ -20,6 +20,9 @@
         <activity android:name=".addTwitterUser" />
         <activity android:name=".Days" />
         <activity android:name=".TimeDate"></activity>
+        <receiver android:name=".AlarmReceiver"/>
+        <service android:name=".RingTonePlayingService"
+            android:enabled="true"></service>
     </application>
 
 </manifest>

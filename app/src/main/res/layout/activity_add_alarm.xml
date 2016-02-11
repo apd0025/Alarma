@@ -22,103 +22,79 @@
             android:layout_column="0" />
     </TableRow>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <Switch
+        <TimePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/twitter"
-            android:id="@+id/swTwitterAdd"
-            android:layout_column="0"
-            android:checked="false"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:id="@+id/tmTimePicker"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ubuMail"
-            android:id="@+id/swUbuMailAdd"
-            android:layout_column="0"
-            android:checked="false"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
-    </TableRow>
-    <TableRow
+        </TimePicker>
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ubuCalendar"
-            android:id="@+id/swUbuCalendarAdd"
-            android:layout_column="0"
-            android:checked="false"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/weather"
-            android:id="@+id/swWeatherAdd"
-            android:layout_column="0"
-            android:checked="false"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/CustomMessage"
-            android:id="@+id/swCustomMessageAdd"
-            android:layout_column="0"
-            android:checked="false"
-            android:layout_weight="1"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/DateTime"
-            android:id="@+id/btDayTimeAdd"
-            android:layout_column="0" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:text="@string/cancel"
+            android:id="@+id/btCancelAdd"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/accept"
-            android:id="@+id/btAceptAdd"
+            android:id="@+id/btAcceptAdd"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Days"
+            android:id="@+id/btDiasAdd"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="did you set the alarm"
+            android:id="@+id/tvUpdateText"
+            android:layout_column="0" />
+    </RelativeLayout>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/options"
+            android:id="@+id/btOptionsAdd"
             android:layout_column="0" />
     </TableRow>
+
+
 </TableLayout>

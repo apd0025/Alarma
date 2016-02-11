@@ -7,7 +7,7 @@
     <string name="ubuMail">UBU Mail</string>
     <string name="ubuCalendar">Ubu Calendario</string>
     <string name="accept">Aceptar</string>
-    <string name="DateTime">Hora y Dias</string>
+    <string name="DateTime">Dias</string>
     <string name="CustomMessage">Mensaje personalizado</string>
     <string name="Time">Hora</string>
     <string name="Days">Dias</string>
@@ -24,5 +24,7 @@
     <string name="User">Usuario</string>
     <string name="Password">Contraseña</string>
     <string name="twitterAccessHint">Télefono, correo o usuario</string>
+    <string name="cancel">Cancelar</string>
+    <string name="options">Opciones</string>
 
 </resources>

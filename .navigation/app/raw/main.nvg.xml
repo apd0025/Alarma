@@ -8,8 +8,8 @@
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "tfg_alvaroperezdelgado.alarma.addAlarm"/>
       <point      
-        x = "3092"      
-        y = "844"/>
+        x = "3804"      
+        y = "476"/>
     </statePointEntry>
     <statePointEntry>
       <state      
@@ -40,16 +40,16 @@
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "tfg_alvaroperezdelgado.alarma.Days"/>
       <point      
-        x = "1724"      
-        y = "128"/>
+        x = "1768"      
+        y = "124"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "tfg_alvaroperezdelgado.alarma.TimeDate"/>
       <point      
-        x = "64"      
-        y = "40"/>
+        x = "112"      
+        y = "-12"/>
     </statePointEntry>
   </locations>
 </navigationModel>

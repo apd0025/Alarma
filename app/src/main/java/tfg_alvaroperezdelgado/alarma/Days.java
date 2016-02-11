@@ -14,7 +14,7 @@ public class Days extends AppCompatActivity {
         findViewById(R.id.btAcceptDays).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Days.this, TimeDate.class));
+                startActivity(new Intent(Days.this, addAlarm.class));
             }
         });
     }
