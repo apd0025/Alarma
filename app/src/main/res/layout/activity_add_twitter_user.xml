@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/twitterAccess"
-            android:id="@+id/tvAccessTittle"
+            android:id="@+id/tvAccessTwitterTittle"
             android:layout_column="0" />
     </TableRow>
 

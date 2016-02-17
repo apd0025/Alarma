@@ -55,19 +55,27 @@ public class addAlarm extends AppCompatActivity {
         //inicialice buttons
         Button startAlarm=(Button)findViewById(R.id.btAcceptAdd);
 
+        //El boton dias me lleva al layout dias
         findViewById(R.id.btDiasAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(addAlarm.this, Days.class));
             }
         });
+
+        //el boton cancel me lleva directamente a mainActivity
         findViewById(R.id.btCancelAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(addAlarm.this, MainActivity.class));
             }
         });
-
+        findViewById(R.id.btOptionsAdd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(addAlarm.this, Options.class));
+            }
+        });
         //create onClick listener to start the alarm
         startAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +109,11 @@ public class addAlarm extends AppCompatActivity {
                 //method that changes the updatetext Textbox
                 setAlarmText("Alarm set to "+stringHour+" : "+stringMinute);
 
+                //put in extra string into intent
+                //tell the clock that you pressed the alarm on button
+                //put extra works putting name and string
+                intent.putExtra("extra", "alarm on");
+
                 //Create a pendidgIntent that delays the intent
                 //until the specified calendar time
                 //tels the alarm manager to send a delayed intent
@@ -125,10 +138,19 @@ public class addAlarm extends AppCompatActivity {
             public void onClick(View v) {
 
                 //method that changes the updatetext Textbox
-                //setAlarmText("Alarm off!");
+                setAlarmText("Alarm off!");
 
                 //cancel the alarm
                 alarmManager.cancel(pendingIntent);
+
+                //put extra string into intent
+                //tells the clock that you pressed the alarm off button
+                intent.putExtra("extra","alarm off");
+
+
+                //stop the ringtone
+                sendBroadcast(intent);
+
 
             }
         });

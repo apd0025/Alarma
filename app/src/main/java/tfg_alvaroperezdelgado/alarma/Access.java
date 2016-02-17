@@ -17,5 +17,24 @@ public class Access extends AppCompatActivity {
                 startActivity(new Intent(Access.this, addTwitterUser.class));
             }
         });
+        findViewById(R.id.btUBUAccess).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Access.this, AddUbuUser.class));
+            }
+        });
+        findViewById(R.id.btCustomMessageAccess).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Access.this, AddMessageUser.class));
+            }
+        });
+        findViewById(R.id.btWeatherAccess).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Access.this, AddWeatherUser.class));
+            }
+        });
     }
+
 }
