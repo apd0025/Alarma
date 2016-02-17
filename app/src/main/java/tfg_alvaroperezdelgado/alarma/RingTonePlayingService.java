@@ -1,5 +1,8 @@
 package tfg_alvaroperezdelgado.alarma;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -76,6 +79,32 @@ public class RingTonePlayingService extends Service {
 
             this.isRunning=true;
             this.start_id=0;
+
+            //notification
+            //set up the notification service
+            NotificationManager notificationManager=(NotificationManager)
+                    getSystemService(NOTIFICATION_SERVICE);
+
+            //set up the intent that goes to the Main Activity
+            Intent intentMainActivity=new Intent(this.getApplicationContext(),MainActivity.class);
+
+            //set up pending intent
+            PendingIntent pendingIntentMainActivity=PendingIntent.getActivity(this,0,intentMainActivity,0);
+
+
+            //make the notification parameters
+            //TODO poner icono y contenido de los mensajes y mirar lo del build y que se muestre bajando y tambien mirar lo de lapi
+            Notification notificationPopup=new Notification.Builder(this)
+                    .setContentTitle("Alarma!!")
+                    .setContentText("alarma")
+                    .setContentIntent(pendingIntentMainActivity)
+                    .setAutoCancel(true)
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .build();
+
+            //set up the notification start command
+            notificationManager.notify(0,notificationPopup);
+
 
         }
         //if there is music playing, and the usser pressed "alarm off"
