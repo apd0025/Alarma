@@ -35,6 +35,14 @@ public class Access extends AppCompatActivity {
                 startActivity(new Intent(Access.this, AddWeatherUser.class));
             }
         });
+
+        findViewById(R.id.btAcceptAccess).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Access.this, MainActivity.class));
+            }
+        });
+
     }
 
 }

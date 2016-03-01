@@ -15,7 +15,7 @@ public class User{
     private String ubuPass;
     private String twitterUser;
     private String twitterPass;
-    private String city;
+    private String zipCode;
     private static User user;
 
     public static User getInstance(){
@@ -57,11 +57,11 @@ public class User{
         this.twitterPass = twitterPass;
     }
 
-    public String getCity() {
-        return city;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setZipCode(String city) {
+        this.zipCode = city;
     }
 }

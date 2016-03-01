@@ -17,8 +17,8 @@ public class Alarm {
     private int hour;
     private int min;
     private Calendar calendar;
-    private enum week{Mon, tue, wed,thu,fri,sat,sun};
-    private List <week> alarmDays=new ArrayList<week>();
+    private enum week{mon, tue, wed,thu,fri,sat,sun};
+    private static List <Boolean> alarmDays=new ArrayList<Boolean>(7);
     private String customMessage;
     private String ubuMailString;
     private String ubuCalendarString;
@@ -29,11 +29,16 @@ public class Alarm {
 
     //con este metodo obtenemos la instancia de alarm
     public static Alarm getInstance(){
-        if(alarm==null){
-            alarm=new Alarm();
+        if(alarm==null) {
+            alarm = new Alarm();
+            for (int i = 0; i < 7; i++) {
+                alarmDays.add(true);
+
+            }
         }
         return alarm;
     }
+
 
     public int getHour() { return hour; }
 
@@ -47,10 +52,39 @@ public class Alarm {
 
     public void setUbuCalendarString(String ubuCalendarString) { this.ubuCalendarString = ubuCalendarString; }
 
-    public List<week> getAlarmDays() { return alarmDays; }
+    public List<Boolean> getAlarmDays() { return alarmDays; }
 
-    public void setAlarmDays(List<week> alarmDays) { this.alarmDays = alarmDays; }
+    public void setAlarmDays(int index,boolean value) {
+        switch (index){
+            case 1:
+                alarmDays.add(0,value);
+                break;
+            case 2:
+                alarmDays.add(1,value);
+                break;
+            case 3:
+                alarmDays.add(2,value);
+                break;
+            case 4:
+                alarmDays.add(3,value);
+                break;
+            case 5:
+                alarmDays.add(4,value);
+                break;
+            case 6:
+                alarmDays.add(5,value);
+                break;
+            case 7:
+                alarmDays.add(6,value);
+                break;
+            default:
+                break;
+        }
+    }
 
+    public void deleteListDays(){
+        alarmDays.removeAll(alarmDays);
+    }
     public String getCustomMessage() { return customMessage; }
 
     public void setCustomMessage(String customMessage) { this.customMessage = customMessage; }

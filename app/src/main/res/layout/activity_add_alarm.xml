@@ -94,6 +94,13 @@
             android:text="@string/options"
             android:id="@+id/btOptionsAdd"
             android:layout_column="0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pruebas"
+            android:id="@+id/button2"
+            android:layout_column="10" />
     </TableRow>
 
 

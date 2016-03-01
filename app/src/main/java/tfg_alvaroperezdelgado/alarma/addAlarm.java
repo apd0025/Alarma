@@ -15,45 +15,52 @@ import java.util.Calendar;
 
 public class addAlarm extends AppCompatActivity {
     //alarmManager
-    AlarmManager alarmManager;
+    private AlarmManager alarmManager;
 
     //time picker como obtendremos la hora de la alarma
-    TimePicker alarmTimePicker;
+    private TimePicker alarmTimePicker;
 
     //texto del medio
-    TextView tvUpdateText;
+    private TextView tvUpdateText;
 
-    Context context;
+    private Context context;
 
+    //objeto alarma
+    private Alarm alarm;
     //Create a pendidgIntent that delays the intent
     //until the specified calendar time
     PendingIntent pendingIntent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_alarm);
 
-        this.context=this;
+        //obtenemos el objeto alarma
+        this.context = this;
 
         //inicialize our alarmManager
-        alarmManager=(AlarmManager)getSystemService(ALARM_SERVICE);
+        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         //inicialize our timePicker
-        alarmTimePicker=(TimePicker) findViewById(R.id.tmTimePicker);
+        alarmTimePicker = (TimePicker) findViewById(R.id.tmTimePicker);
 
         //inicialize text update box
-        tvUpdateText=(TextView)findViewById(R.id.tvUpdateText);
+        tvUpdateText = (TextView) findViewById(R.id.tvUpdateText);
 
         //create an instance of a calendar
-        final Calendar calendar=Calendar.getInstance();
+        final Calendar calendar = Calendar.getInstance();
 
+
+        //obtenemos el objeto alarma
+        alarm = Alarm.getInstance();
 
         //create an intent to the alarm receiver class
         //tells which receiver to send signal to
-        final Intent intent= new Intent(this.context,AlarmReceiver.class);
+        final Intent intent = new Intent(this.context, AlarmReceiver.class);
 
         //inicialice buttons
-        Button startAlarm=(Button)findViewById(R.id.btAcceptAdd);
+        Button startAlarm = (Button) findViewById(R.id.btAcceptAdd);
 
         //El boton dias me lleva al layout dias
         findViewById(R.id.btDiasAdd).setOnClickListener(new View.OnClickListener() {
@@ -83,31 +90,35 @@ public class addAlarm extends AppCompatActivity {
 
                 //estamos asociando a nuestro calendario a traves del timePicker la hora y el dia
                 //setting calendar instance with the Hour and minute we picked
-                calendar.set(Calendar.HOUR_OF_DAY,alarmTimePicker.getHour());
-                calendar.set(Calendar.MINUTE,alarmTimePicker.getMinute());
+                calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());
+                calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());
 
                 //get the string values of the hour and minute
                 //TODO
-                int hour=alarmTimePicker.getHour();
-                int minute=alarmTimePicker.getMinute();
+                int hour = alarmTimePicker.getHour();
+                int minute = alarmTimePicker.getMinute();
+
+                //guardamos en alarma la hora y el minuto
+                alarm.setMin(minute);
+                alarm.setHour(hour);
 
                 //Convert the String values to string
-                String stringHour=String.valueOf(hour);
-                String stringMinute=String.valueOf(minute);
+                String stringHour = String.valueOf(hour);
+                String stringMinute = String.valueOf(minute);
 
                 //convertir a 12 hour time
-                if(hour>12){
-                    stringHour=String.valueOf(hour-12);
+                if (hour > 12) {
+                    stringHour = String.valueOf(hour - 12);
                 }
 
                 //convertir minuto 10:7 a 10:07
-                if(minute<10){
-                    stringMinute=String.valueOf("0"+minute);
+                if (minute < 10) {
+                    stringMinute = String.valueOf("0" + minute);
 
                 }
 
                 //method that changes the updatetext Textbox
-                setAlarmText("Alarm set to "+stringHour+" : "+stringMinute);
+                setAlarmText("Alarm set to " + stringHour + " : " + stringMinute);
 
                 //put in extra string into intent
                 //tell the clock that you pressed the alarm on button
@@ -117,20 +128,20 @@ public class addAlarm extends AppCompatActivity {
                 //Create a pendidgIntent that delays the intent
                 //until the specified calendar time
                 //tels the alarm manager to send a delayed intent
-                pendingIntent=PendingIntent.getBroadcast(addAlarm.this,0,
-                        intent,PendingIntent.FLAG_UPDATE_CURRENT);
+                pendingIntent = PendingIntent.getBroadcast(addAlarm.this, 0,
+                        intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 //set the alarm manager
                 //le pasamos el reloj de tiempo real, el calendario que contiene la hora y minuto a los que vamos a poner la alarma
-                alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis()
-                        ,pendingIntent);
+                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis()
+                        , pendingIntent);
 
             }
         });
 
 
         //inicialice stopButton
-        Button stopAlarm=(Button)findViewById(R.id.btCancelAdd);
+        Button stopAlarm = (Button) findViewById(R.id.btCancelAdd);
 
         //create onClick listener to stop the alarm
         stopAlarm.setOnClickListener(new View.OnClickListener() {
@@ -145,18 +156,22 @@ public class addAlarm extends AppCompatActivity {
 
                 //put extra string into intent
                 //tells the clock that you pressed the alarm off button
-                intent.putExtra("extra","alarm off");
+                intent.putExtra("extra", "alarm off");
 
 
                 //stop the ringtone
                 sendBroadcast(intent);
 
+                startActivity(new Intent(addAlarm.this, MainActivity.class));
 
             }
         });
-
-
-
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(addAlarm.this, PruebasAlarma.class));
+            }
+        });
 
 
     }

@@ -29,7 +29,9 @@
         <activity android:name=".Options" />
         <activity android:name=".AddUbuUser" />
         <activity android:name=".AddWeatherUser" />
-        <activity android:name=".AddMessageUser"></activity>
+        <activity android:name=".AddMessageUser" />
+        <activity android:name=".PruebasAlarma" />
+        <activity android:name=".PruebasUsuario"></activity>
     </application>
 
 </manifest>

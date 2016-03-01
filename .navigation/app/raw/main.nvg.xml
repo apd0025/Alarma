@@ -14,58 +14,74 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "tfg_alvaroperezdelgado.alarma.AddUbuUser"/>
+        className = "tfg_alvaroperezdelgado.alarma.addTwitterUser"/>
       <point      
-        x = "2060"      
-        y = "4228"/>
+        x = "592"      
+        y = "1064"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "tfg_alvaroperezdelgado.alarma.addTwitterUser"/>
+        className = "tfg_alvaroperezdelgado.alarma.AddUbuUser"/>
       <point      
-        x = "412"      
-        y = "1072"/>
+        x = "2392"      
+        y = "3580"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "tfg_alvaroperezdelgado.alarma.AddMessageUser"/>
       <point      
-        x = "3292"      
-        y = "4288"/>
+        x = "3252"      
+        y = "3856"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "tfg_alvaroperezdelgado.alarma.Access"/>
+        className = "tfg_alvaroperezdelgado.alarma.PruebasUsuario"/>
       <point      
-        x = "1860"      
-        y = "996"/>
+        x = "550"      
+        y = "9810"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "tfg_alvaroperezdelgado.alarma.MainActivity"/>
+        className = "tfg_alvaroperezdelgado.alarma.PruebasAlarma"/>
       <point      
-        x = "3008"      
-        y = "16"/>
+        x = "500"      
+        y = "9760"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "tfg_alvaroperezdelgado.alarma.Days"/>
       <point      
-        x = "1108"      
-        y = "-40"/>
+        x = "988"      
+        y = "-88"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "tfg_alvaroperezdelgado.alarma.AddWeatherUser"/>
+        className = "tfg_alvaroperezdelgado.alarma.MainActivity"/>
       <point      
-        x = "600"      
-        y = "4340"/>
+        x = "2868"      
+        y = "-52"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.Access"/>
+      <point      
+        x = "1892"      
+        y = "680"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.Options"/>
+      <point      
+        x = "696"      
+        y = "2600"/>
     </statePointEntry>
     <statePointEntry>
       <state      
@@ -78,10 +94,10 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "tfg_alvaroperezdelgado.alarma.Options"/>
+        className = "tfg_alvaroperezdelgado.alarma.AddWeatherUser"/>
       <point      
-        x = "524"      
-        y = "2636"/>
+        x = "844"      
+        y = "4180"/>
     </statePointEntry>
   </locations>
 </navigationModel>
