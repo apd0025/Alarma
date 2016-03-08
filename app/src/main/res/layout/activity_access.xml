@@ -15,7 +15,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/Access"
@@ -28,7 +28,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/twitter"
             android:id="@+id/btTwitterAccess"
@@ -41,7 +41,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/UBU"
             android:id="@+id/btUBUAccess"
@@ -54,7 +54,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/weather"
             android:id="@+id/btWeatherAccess"
@@ -62,18 +62,7 @@
             android:layout_weight="1" />
     </TableRow>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/CustomMessage"
-            android:id="@+id/btCustomMessageAccess"
-            android:layout_column="0"
-            android:layout_weight="1" />
-    </TableRow>
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent">

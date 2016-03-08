@@ -22,7 +22,7 @@ public class AddMessageUser extends AppCompatActivity {
     //campo donde introduciremos el texto que queremos guardar
     private EditText message;
     //objeto singleton alarm donde guardaremos el mensaje
-    private Alarm alarm;
+    private Container container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +34,14 @@ public class AddMessageUser extends AppCompatActivity {
         message=(EditText)findViewById(R.id.etCustonMessage);
 
         //obtenemos la instancia de alarm
-        alarm=Alarm.getInstance();
+        container=Container.getInstance();
 
         //Controlar lo que pasa al hacer click en el boton aceptar
         acept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 aux=message.getText().toString();
-                alarm.setCustomMessage(aux);
+                container.setCustomMessage(aux);
                 startActivity(new Intent(AddMessageUser.this, MainActivity.class));
             }
         });

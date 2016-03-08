@@ -20,21 +20,20 @@
             android:id="@+id/tvTimeDateTittle"
             android:layout_column="0" />
     </TableRow>
-
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Switch
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/twitter"
-            android:id="@+id/swTwitterAdd"
+            android:text="@string/CustomMessage"
+            android:id="@+id/swCustomMessageAdd"
             android:layout_column="0"
             android:checked="false"
             android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" />
     </TableRow>
     <TableRow
         android:layout_width="match_parent"
@@ -73,8 +72,8 @@
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/weather"
-            android:id="@+id/swWeatherAdd"
+            android:text="@string/twitter"
+            android:id="@+id/swTwitterAdd"
             android:layout_column="0"
             android:checked="false"
             android:layout_weight="1"
@@ -86,15 +85,43 @@
         android:layout_height="match_parent">
 
         <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weather"
+            android:id="@+id/swWeatherAdd"
+            android:layout_column="0"
+            android:checked="false"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Switch
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/CustomMessage"
-            android:id="@+id/swCustomMessageAdd"
+            android:id="@+id/swMusicAdd"
             android:layout_column="0"
             android:checked="false"
             android:layout_weight="1"
             android:paddingBottom="10dp"
-            android:paddingTop="10dp" />
+            android:paddingTop="10dp"
+            android:text="@string/Music" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/CustomMessage"
+            android:id="@+id/btCustomMessageOptions"
+            android:layout_column="0"
+            android:layout_weight="1" />
     </TableRow>
 
     <RelativeLayout
@@ -120,6 +147,7 @@
             android:layout_alignParentStart="true" />
 
     </RelativeLayout>
+
 
 </TableLayout>
 

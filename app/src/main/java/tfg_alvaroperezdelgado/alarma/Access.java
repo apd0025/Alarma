@@ -11,24 +11,24 @@ public class Access extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_access);
+
+        //El boton btTwitterAccess nos lleva hasta addTwitterUser
         findViewById(R.id.btTwitterAccess).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Access.this, addTwitterUser.class));
             }
         });
+
+        //El boton btUBUAccess nos lleva hasta addUbuUser
         findViewById(R.id.btUBUAccess).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Access.this, AddUbuUser.class));
             }
         });
-        findViewById(R.id.btCustomMessageAccess).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Access.this, AddMessageUser.class));
-            }
-        });
+
+        //El boton btWeatherAccess nos lleva hasta AddWeatherUser
         findViewById(R.id.btWeatherAccess).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,6 +36,7 @@ public class Access extends AppCompatActivity {
             }
         });
 
+        //El boton btAcceptAccess nos lleva hasta MainActivity
         findViewById(R.id.btAcceptAccess).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -90,8 +90,8 @@ public class addAlarm extends AppCompatActivity {
 
                 //estamos asociando a nuestro calendario a traves del timePicker la hora y el dia
                 //setting calendar instance with the Hour and minute we picked
-                calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());
-                calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());
+                calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());//getCurrentHour()
+                calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());//getCurrentMinute()
 
                 //get the string values of the hour and minute
                 //TODO

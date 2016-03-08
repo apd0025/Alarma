@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 
+import java.util.List;
+
 public class Days extends AppCompatActivity {
 
     //Button accept
@@ -33,8 +35,32 @@ public class Days extends AppCompatActivity {
 
         //get instance Alarm
         alarm=Alarm.getInstance();
+        List<Boolean> dias;
+        dias=alarm.getAlarmDays();
 
 
+        //mostraremos el switch activado o desactivado en funcion de si esta o no activado
+        if(dias.get(0)==true){
+            swMon.setChecked(true);
+        }
+        if(dias.get(1)==true){
+            swTue.setChecked(true);
+        }
+        if(dias.get(2)==true){
+            swWed.setChecked(true);
+        }
+        if(dias.get(3)==true){
+            swThu.setChecked(true);
+        }
+        if(dias.get(4)==true){
+            swFri.setChecked(true);
+        }
+        if(dias.get(5)==true){
+            swSat.setChecked(true);
+        }
+        if(dias.get(6)==true){
+            swSun.setChecked(true);
+        }
 
         findViewById(R.id.btAcceptDays).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -37,8 +37,7 @@ public class PruebasAlarma extends AppCompatActivity {
         tvHora.setText(horaString);
         tvMinuto.setText(minString);
         tvlistaDias.setText(lista);
-        String messageString = String.valueOf(alarm.getCustomMessage());
-        tvCustomMessage.setText(messageString);
+
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
