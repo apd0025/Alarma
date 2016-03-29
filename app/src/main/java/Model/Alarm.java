@@ -1,6 +1,5 @@
-package tfg_alvaroperezdelgado.alarma;
+package Model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -38,18 +37,27 @@ public class Alarm {
         return alarm;
     }
 
+    public int getHour() {
+        return hour;
+    }
 
-    public int getHour() { return hour; }
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
 
-    public void setHour(int hour) { this.hour = hour; }
+    public int getMin() {
+        return min;
+    }
 
-    public int getMin() { return min; }
+    public void setMin(int min) {
+        this.min = min;
+    }
 
-    public void setMin(int min) { this.min = min; }
 
 
-
-    public List<Boolean> getAlarmDays() { return alarmDays; }
+    public List<Boolean> getAlarmDays() {
+        return alarmDays;
+    }
 
     public void setAlarmDays(int index,boolean value) {
         switch (index){
@@ -80,10 +88,13 @@ public class Alarm {
     }
 
     public void deleteListDays(){
+
         alarmDays.removeAll(alarmDays);
     }
 
-    public List<Boolean> getChoosenoptions() { return choosenoptions; }
+    public List<Boolean> getChoosenoptions() {
+        return choosenoptions;
+    }
 
     public void setChoosenoptions(int index,boolean value) {
         switch (index){

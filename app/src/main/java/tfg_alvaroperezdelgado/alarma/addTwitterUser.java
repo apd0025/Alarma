@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import Model.User;
+
 /*Clase AddTwiterUser
 * En esta clase guardaremos la informacion del usuario en el objeto singleton user
 *

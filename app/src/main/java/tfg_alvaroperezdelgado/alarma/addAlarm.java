@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
+
+import Model.Alarm;
 
 public class addAlarm extends AppCompatActivity {
     //alarmManager
@@ -87,17 +90,29 @@ public class addAlarm extends AppCompatActivity {
         startAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int hour,minute;
 
-                //estamos asociando a nuestro calendario a traves del timePicker la hora y el dia
-                //setting calendar instance with the Hour and minute we picked
-                calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());//getCurrentHour()
-                calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());//getCurrentMinute()
 
-                //get the string values of the hour and minute
-                //TODO
-                int hour = alarmTimePicker.getHour();
-                int minute = alarmTimePicker.getMinute();
+                //Esto comprueba si la version es superior a la que necesita o no para usar un metodo u otro
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    //estamos asociando a nuestro calendario a traves del timePicker la hora y el dia
+                    //setting calendar instance with the Hour and minute we picked
+                    calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());//getCurrentHour()
+                    calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());//getCurrentMinute()
+                    calendar.set(Calendar.SECOND, 0);
+                    //get the string values of the hour and minute
+                    hour = alarmTimePicker.getHour();
+                    minute = alarmTimePicker.getMinute();
+                }else{
+                    //estamos asociando a nuestro calendario a traves del timePicker la hora y el dia
+                    //setting calendar instance with the Hour and minute we picked
+                    calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getCurrentHour());
+                    calendar.set(Calendar.MINUTE, alarmTimePicker.getCurrentMinute());
+                    calendar.set(Calendar.SECOND, 0);
 
+                    hour = alarmTimePicker.getCurrentHour();
+                    minute = alarmTimePicker.getCurrentMinute();
+                }
                 //guardamos en alarma la hora y el minuto
                 alarm.setMin(minute);
                 alarm.setHour(hour);

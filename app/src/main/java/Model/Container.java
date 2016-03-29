@@ -1,4 +1,6 @@
-package tfg_alvaroperezdelgado.alarma;
+package Model;
+
+import java.io.File;
 
 /**
  * Clase container
@@ -15,7 +17,8 @@ public class Container {
     private String twitterString;
     //guarda un string con la informacion metereologica
     private String weatherString;
-
+    //guarda la cancion que queramos reproducir
+    private File song;
     //guarda un objeto contenedor
     private static Container container;
 
@@ -26,9 +29,13 @@ public class Container {
         return container;
     }
 
-    public String getCustomMessage() { return customMessage; }
+    public String getCustomMessage() {
+        return customMessage;
+    }
 
-    public void setCustomMessage(String customMessage) { this.customMessage = customMessage; }
+    public void setCustomMessage(String customMessage) {
+        this.customMessage = customMessage;
+    }
 
     public String getUbuMailString() {
         return ubuMailString;
@@ -38,9 +45,13 @@ public class Container {
         this.ubuMailString = ubuMailString;
     }
 
-    public String getUbuCalendarString() { return ubuCalendarString; }
+    public String getUbuCalendarString() {
+        return ubuCalendarString;
+    }
 
-    public void setUbuCalendarString(String ubuCalendarString) { this.ubuCalendarString = ubuCalendarString; }
+    public void setUbuCalendarString(String ubuCalendarString) {
+        this.ubuCalendarString = ubuCalendarString;
+    }
 
     public String getTwitterString() {
         return twitterString;
@@ -50,7 +61,20 @@ public class Container {
         this.twitterString = twitterString;
     }
 
-    public String getWeatherString() { return weatherString;}
+    public String getWeatherString() {
+        return weatherString;
+    }
 
-    public void setWeatherString(String weatherString) { this.weatherString = weatherString;}
+    public void setWeatherString(String weatherString) {
+        this.weatherString = weatherString;
+    }
+
+    public File getSong() {
+        return song;
+    }
+
+    public void setSong(File song) {
+        this.song = song;
+    }
+
 }

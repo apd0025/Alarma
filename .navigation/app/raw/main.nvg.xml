@@ -6,18 +6,50 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "tfg_alvaroperezdelgado.alarma.addAlarm"/>
-      <point      
-        x = "3868"      
-        y = "968"/>
-    </statePointEntry>
-    <statePointEntry>
-      <state      
-        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "tfg_alvaroperezdelgado.alarma.addTwitterUser"/>
       <point      
         x = "592"      
         y = "1064"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.SelectSong"/>
+      <point      
+        x = "52"      
+        y = "4204"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.PruebasUsuario"/>
+      <point      
+        x = "224"      
+        y = "9944"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.Days"/>
+      <point      
+        x = "988"      
+        y = "-88"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.MainActivity"/>
+      <point      
+        x = "2868"      
+        y = "-52"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.addAlarm"/>
+      <point      
+        x = "3868"      
+        y = "968"/>
     </statePointEntry>
     <statePointEntry>
       <state      
@@ -38,34 +70,10 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "tfg_alvaroperezdelgado.alarma.PruebasUsuario"/>
-      <point      
-        x = "550"      
-        y = "9810"/>
-    </statePointEntry>
-    <statePointEntry>
-      <state      
-        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "tfg_alvaroperezdelgado.alarma.PruebasAlarma"/>
       <point      
-        x = "500"      
-        y = "9760"/>
-    </statePointEntry>
-    <statePointEntry>
-      <state      
-        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "tfg_alvaroperezdelgado.alarma.Days"/>
-      <point      
-        x = "988"      
-        y = "-88"/>
-    </statePointEntry>
-    <statePointEntry>
-      <state      
-        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "tfg_alvaroperezdelgado.alarma.MainActivity"/>
-      <point      
-        x = "2868"      
-        y = "-52"/>
+        x = "1620"      
+        y = "9520"/>
     </statePointEntry>
     <statePointEntry>
       <state      
@@ -96,8 +104,8 @@
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "tfg_alvaroperezdelgado.alarma.AddWeatherUser"/>
       <point      
-        x = "844"      
-        y = "4180"/>
+        x = "1316"      
+        y = "4224"/>
     </statePointEntry>
   </locations>
 </navigationModel>

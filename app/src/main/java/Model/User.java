@@ -1,6 +1,4 @@
-package tfg_alvaroperezdelgado.alarma;
-
-import java.io.Serializable;
+package Model;
 
 /**
  * Created by perez on 22/2/16.

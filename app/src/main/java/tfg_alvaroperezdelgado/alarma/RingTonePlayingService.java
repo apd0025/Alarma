@@ -94,17 +94,21 @@ public class RingTonePlayingService extends Service {
 
             //make the notification parameters
             //TODO poner icono y contenido de los mensajes y mirar lo del build y que se muestre bajando y tambien mirar lo de lapi
-            Notification notificationPopup=new Notification.Builder(this)
-                    .setContentTitle("Alarma!!")
-                    .setContentText("alarma")
-                    .setContentIntent(pendingIntentMainActivity)
-                    .setAutoCancel(true)
-                    .setSmallIcon(R.mipmap.ic_launcher)
-                    .build();
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                Notification notificationPopup= null;
+
+                notificationPopup = new Notification.Builder(this)
+                        .setContentTitle("Alarma!!")
+                        .setContentText("alarma")
+                        .setContentIntent(pendingIntentMainActivity)
+                        .setAutoCancel(true)
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .build();
+
 
             //set up the notification start command
             notificationManager.notify(0,notificationPopup);
-
+            }
 
         }
         //if there is music playing, and the usser pressed "alarm off"

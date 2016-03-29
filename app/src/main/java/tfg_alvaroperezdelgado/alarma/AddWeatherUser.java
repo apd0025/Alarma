@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import Model.User;
+
 public class AddWeatherUser extends AppCompatActivity {
 
     private EditText zipCode;
