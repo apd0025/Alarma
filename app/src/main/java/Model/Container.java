@@ -8,17 +8,17 @@ import java.io.File;
  */
 public class Container {
     //guarda el string con el mensaje customizado
-    private String customMessage;
+    private String customMessage="Este es un mensaje personalizado";
     //guarda el string con los mails que vayamos a leer
-    private String ubuMailString;
+    private String ubuMailString=null;
     //guarda el string con lo que queremos leer del calendario
-    private String ubuCalendarString;
+    private String ubuCalendarString=null;
     //guarda un String con los mensajes de twiter que queremos que lea
-    private String twitterString;
+    private String twitterString=null;
     //guarda un string con la informacion metereologica
-    private String weatherString;
+    private String weatherString=null;
     //guarda la cancion que queramos reproducir
-    private File song;
+    private File song=null;
     //guarda un objeto contenedor
     private static Container container;
 

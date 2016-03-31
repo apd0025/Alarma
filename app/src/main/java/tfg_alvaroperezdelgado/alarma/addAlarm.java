@@ -184,7 +184,7 @@ public class addAlarm extends AppCompatActivity {
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(addAlarm.this, PruebasAlarma.class));
+                startActivity(new Intent(addAlarm.this, Speech.class));
             }
         });
 

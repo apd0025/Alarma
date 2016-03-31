@@ -6,23 +6,27 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
+import Model.Container;
+
 /**
- * Created by Alvaro Perez on 10/2/16.
+ * Esta clase se ocupa de reproducir el sonido de la alarma
  */
 public class RingTonePlayingService extends Service {
 
-    //Object which play a song
-    MediaPlayer mediaPlayer;
-
-    //It controls what button is push
-    int start_id;
-    //controla si esta funcionando esta clase
-    boolean isRunning;
+    //mediaPlat
+    private MediaPlayer mediaPlayer;
+    //start_id controla que boton esta pulsado
+    private int start_id;
+    //isRunning controla si esta funcionando esta clase
+    private boolean isRunning;
+    //container contiene lo que queremos leer
+    Container container;
 
     @Nullable
     @Override
@@ -68,14 +72,27 @@ public class RingTonePlayingService extends Service {
         //if there is no music playing an the user pressed "alarm on"
         //music should start playing
         if(!this.isRunning&& start_id==1){
+            //obtenemos una instancia de container
+            container=Container.getInstance();
+            Log.e("There is no music, ", "and you want start");
 
-            Log.e("There is no music, ","and you want start");
+            //si hay algo en el song, o es distinto de nulo que lea esa cancion.
+            if(!(container.getSong()==null)) {
+                //creamos una uri a traves de nuestro archivo File cancion para pasarselo al mediaPlayer
+                Uri u = Uri.parse(container.getSong().toString());
 
-            //creamos el media player pasandole el contexto y el audio que queremos escuchar
-            mediaPlayer=MediaPlayer.create(this,R.raw.dove);
+                //creamos el media player pasandole el contexto y el audio que queremos escuchar
+                mediaPlayer = MediaPlayer.create(this, u);
+            }//sino que ponga una cancion por defecto
+            else {
+                //cancion por defecto
+                mediaPlayer = MediaPlayer.create(this, R.raw.dove);
+            }
+
             //Start the ringtone
             mediaPlayer.start();
-
+            //Como iniciar una actividad desde aqui
+            //startActivity(new Intent(RingTonePlayingService.this, AddMessageUser.class));
 
             this.isRunning=true;
             this.start_id=0;

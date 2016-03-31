@@ -15,13 +15,20 @@ import java.util.ArrayList;
 
 import Model.Container;
 
+/**
+ * Esta clase sirve para seleccionar una cancion de nuestra tarjeta sd, para posteriormente almacenarla
+ * en nuestra clase Container para poder reproducirla con la alarma
+ *
+ * */
 public class SelectSong extends AppCompatActivity {
 //para acceder a la tarjeta sd necesitamos poner esto en el manifiesto
     // <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     //este es el listview donde mostraremos todas nuestras canciones
     private ListView lv;
+    //items es un array de Strings donde, guardaremos una cadena de caracteres de cada una de nuestras canciones
     private String[] items;
+    //container es nuestra clase donde guardamos los atributos que vamos a leer o a hacer sonar
     private Container container;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +61,8 @@ public class SelectSong extends AppCompatActivity {
         //obtenemos la instancia del contenedor
         container=Container.getInstance();
 
+        //cuando selecionemos una cancion vamos a añadirla a nuestro contenedor
+        //atraves de su posicion y partiendo del arrayList mysongs
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override

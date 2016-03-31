@@ -10,6 +10,10 @@ import java.util.List;
 
 import Model.Alarm;
 
+/**
+ * Clase options
+ * sirve para seleccionar que opciones queremos seleccionar para que suenen con nuestra alarma
+ */
 public class Options extends AppCompatActivity {
 
     //objet alarm
