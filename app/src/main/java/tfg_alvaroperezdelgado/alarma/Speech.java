@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.util.Locale;
 
 import Model.Container;
@@ -19,6 +20,7 @@ public class Speech extends Activity implements TextToSpeech.OnInitListener
     private Switch swEsEn;
     private Button btnSpanish;
     private Button btSpeechCustom;
+    private Button btSpeechWeather;
     private Container container;
 
     @Override
@@ -29,6 +31,7 @@ public class Speech extends Activity implements TextToSpeech.OnInitListener
 
         btnSpanish = ( Button ) findViewById( R.id.btSpeechSpa );
         btSpeechCustom = ( Button ) findViewById( R.id.btSpeechCustom );
+        btSpeechWeather=(Button)findViewById(R.id.btSpeechWeather);
 
         //Instanciamos los componentes de la vista
         textToSpeech = new TextToSpeech( this, this );
@@ -54,20 +57,42 @@ public class Speech extends Activity implements TextToSpeech.OnInitListener
             }
         } );
 
+        
+        //cuando se pulse el boton mensaje personalizado leera el mensaje antes almacenado
+        //en container
         btSpeechCustom.setOnClickListener( new View.OnClickListener()
         {
             @Override public void onClick( View v )
             {
-
+                //si el switch esta sin seleccionar hablara en castellano, sino en ingles
                 if(swEsEn.isChecked()==false){
+                    //primero seleccionamos el idioma en el que queremos que lo lea
                     textToSpeech.setLanguage(new Locale("spa", "ESP"));
+                    //con el metodo speak leemos el contenido de el string
                     speak(container.getCustomMessage().toString());
+
                 }else{
                     textToSpeech.setLanguage( Locale.ENGLISH );
                     speak( container.getCustomMessage().toString() );
                 }
             }
         } );
+
+        btSpeechWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(swEsEn.isChecked()==false){
+                    //primero seleccionamos el idioma en el que queremos que lo lea
+                    textToSpeech.setLanguage(new Locale("spa", "ESP"));
+                    //con el metodo speak leemos el contenido de el string
+                    speak(container.getWeatherString().toString());
+
+                }else{
+                    textToSpeech.setLanguage( Locale.ENGLISH );
+                    speak( container.getWeatherString().toString() );
+                }
+            }
+        });
 
     }
 
@@ -87,11 +112,13 @@ public class Speech extends Activity implements TextToSpeech.OnInitListener
         textToSpeech.setPitch( 0.0f );
     }
 
+    //cuando se sale de esta actividad
     @Override
     protected void onDestroy()
     {
         if ( textToSpeech != null )
         {
+            //paramos el texttospeech y lo apagamos
             textToSpeech.stop();
             textToSpeech.shutdown();
         }

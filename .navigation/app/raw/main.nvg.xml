@@ -46,10 +46,18 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "tfg_alvaroperezdelgado.alarma.Speech"/>
+      <point      
+        x = "4304"      
+        y = "8380"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "tfg_alvaroperezdelgado.alarma.addAlarm"/>
       <point      
-        x = "3868"      
-        y = "968"/>
+        x = "3848"      
+        y = "1024"/>
     </statePointEntry>
     <statePointEntry>
       <state      

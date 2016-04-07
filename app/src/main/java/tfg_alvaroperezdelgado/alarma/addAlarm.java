@@ -16,6 +16,7 @@ import java.util.Calendar;
 
 import Model.Alarm;
 
+
 public class addAlarm extends AppCompatActivity {
     //alarmManager
     private AlarmManager alarmManager;
@@ -184,7 +185,7 @@ public class addAlarm extends AppCompatActivity {
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(addAlarm.this, Speech.class));
+                startActivity(new Intent(addAlarm.this, WeatherActivity.class));
             }
         });
 

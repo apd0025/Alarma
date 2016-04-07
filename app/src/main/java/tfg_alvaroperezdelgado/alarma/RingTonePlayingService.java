@@ -5,10 +5,12 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -19,7 +21,8 @@ import Model.Container;
  */
 public class RingTonePlayingService extends Service {
 
-    //mediaPlat
+    private int NOTIFICATION_ID=1;
+    //mediaPlayer sirve para reproducir canciones
     private MediaPlayer mediaPlayer;
     //start_id controla que boton esta pulsado
     private int start_id;
@@ -97,23 +100,26 @@ public class RingTonePlayingService extends Service {
             this.isRunning=true;
             this.start_id=0;
 
-            //notification
-            //set up the notification service
-            NotificationManager notificationManager=(NotificationManager)
-                    getSystemService(NOTIFICATION_SERVICE);
-
-            //set up the intent that goes to the Main Activity
-            Intent intentMainActivity=new Intent(this.getApplicationContext(),MainActivity.class);
-
-            //set up pending intent
-            PendingIntent pendingIntentMainActivity=PendingIntent.getActivity(this,0,intentMainActivity,0);
 
 
-            //make the notification parameters
-            //TODO poner icono y contenido de los mensajes y mirar lo del build y que se muestre bajando y tambien mirar lo de lapi
+
+            //TODO poner icono y contenido de los mensajes y mirar lo del build y que se muestre bajando y tambien mirar lo del api
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                Notification notificationPopup= null;
+                //notification
+                //set up the notification service
+                NotificationManager notificationManager=(NotificationManager)
+                        getSystemService(NOTIFICATION_SERVICE);
 
+                //Hacemos un intent que nos lleve a la clase Speech
+                Intent intent2=new Intent(this.getApplicationContext(),Speech.class);
+
+                //Inicializamos un pendingIntent con el intent anterior
+                PendingIntent pendingIntentMainActivity=PendingIntent.getActivity(this,0,intent2,0);
+
+
+                //construimos la notificacion
+                Notification notificationPopup= null;
+                //make the notification parameters
                 notificationPopup = new Notification.Builder(this)
                         .setContentTitle("Alarma!!")
                         .setContentText("alarma")
@@ -125,6 +131,29 @@ public class RingTonePlayingService extends Service {
 
             //set up the notification start command
             notificationManager.notify(0,notificationPopup);
+
+
+            }else{//si esta por debajo de jellybean ejecutara esta notficacion
+                //Hacemos un intent que nos lleve a la clase Speech
+                Intent intent2= new Intent(new Intent(this.getApplicationContext(), Speech.class));
+
+                //Inicializamos un pendingIntent con el intent anterior
+                PendingIntent pendingIntent=PendingIntent.getActivity(this.getApplicationContext(),0,intent2,0);
+
+
+                //construimos la notificacion
+                NotificationCompat.Builder builder=new NotificationCompat.Builder(RingTonePlayingService.this);
+                builder.setSmallIcon(R.drawable.ic_icon);
+                builder.setContentIntent(pendingIntent);
+                builder.setAutoCancel(true);
+                builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_icon));
+                builder.setContentTitle("Titulo notificacion");
+                builder.setContentText("Contenido hola mundo");
+                builder.setSubText("Subtexto eyy que paso");
+
+                //Enviar la notificacion
+                NotificationManager notificationManager=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+                notificationManager.notify(NOTIFICATION_ID,builder.build());
             }
 
         }

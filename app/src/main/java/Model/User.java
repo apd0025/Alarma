@@ -13,7 +13,7 @@ public class User{
     private String ubuPass;
     private String twitterUser;
     private String twitterPass;
-    private String zipCode;
+    private String zipCode="Burgos";
     private static User user;
 
     public static User getInstance(){
